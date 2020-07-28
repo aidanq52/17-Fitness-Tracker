@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const workoutSchema = new Schema({
-    cardio: {
+    type: {
         type: Boolean,
         required: "Cardio or not cardio (resistance) is required"
     },
@@ -13,12 +13,12 @@ const workoutSchema = new Schema({
         required: "Exercise name is required"
     },
 
-    weight: {
+    duration:{
         type: Number,
         required: true
     },
 
-    workoutSet: {
+    weight: {
         type: Number,
         required: true
     },
@@ -28,10 +28,11 @@ const workoutSchema = new Schema({
         required: true
     },
 
-    duration:{
+    sets: {
         type: Number,
         required: true
     }
+
 });
 
 const Workout = mongoose.model("Workout", workoutSchema);
