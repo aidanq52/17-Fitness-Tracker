@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 
 // app.use(logger("dev"));
-app.use(express.urlencoded({entended: true}));
+app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(express.static("public"));
 
@@ -21,7 +21,7 @@ mongoose.connect(process.env.MONGODB_URI ||"mongodb://localhost/userdb", {
 // require("./routes/htmlRoutes")(app);
 // require("./routes/workoutController")(app);
 
-app.use(require("./routes/index"));
+app.use(require("./routes"));
 
 app.listen(PORT, ()=>{
     console.log("App running at: http://localhost:"+PORT)
